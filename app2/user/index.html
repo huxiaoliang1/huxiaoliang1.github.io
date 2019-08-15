@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #ffffff;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<ol>
+<li>Special Notice
+1.1 In order to use this mobile application software and services, you should read and abide by the User Agreement (hereinafter referred to as &quot;this Agreement&quot;). Please be sure to read carefully and fully understand the terms and conditions, especially the terms of exemption or limitation of liability, and the separate agreement to agree or use a service, and choose to accept or not accept.
+1.2 You are not authorized to download, install or use the Software and related services unless you have read and accepted all the terms of this Agreement. Your download, installation, use, access to account, login, etc. are deemed to have been read and agreed to be bound by the above agreement.
+1.3 I (hereinafter referred to as &quot;I&quot;) agree to provide Internet-based related services (hereinafter referred to as the Service) in accordance with the provisions of this Agreement and the operational rules issued from time to time. In order to obtain this service, the service user (hereinafter referred to as the user) shall agree to all the terms of this agreement and follow the instructions on the page to complete the application process.</li>
+<li>Scope of the Agreement
+2.1 Scope of Application of the Agreement\n This Agreement is an agreement between you and me regarding your downloading, installing, using, copying the Software and using the Services.
+2.2 Agreement Relationships and Conflicting Terms The terms of service published by me on the website and the enrollment plan and shift agreement of the courses attended by the users are supplements to this agreement. In the event of any conflict between this Agreement and the above, this Agreement shall prevail. The content of this agreement also includes relevant agreements and business rules that may be continuously published by the user. Once the above content is officially released, it is an integral part of this agreement and you should also abide by it.</li>
+<li>Service content and authorized use scope
+3.1 The software provides services according to the actual needs of users, such as listening to classes and doing exercises. I reserve the right to change, discontinue or terminate some or all of the Service at any time.
+3.2 Authorized use scope of the software mobile phone application:
+1) Users can install, use, display and run the software on the mobile phone.
+2) Retention rights: All other rights not expressly authorized are owned by me.</li>
+<li>Use the rules
+4.1 account usage rules
+4.1.1 Users need to register an account before using the software. Users need to provide accurate personal information when registering. If there is any change in personal information, it needs to be updated in time. If the problem caused by inaccurate registration information is borne by the user, I am not responsible for any responsibility and have the right to suspend or terminate the user&#39;s account.
+4.1.2 The ownership of the software account belongs to the owner. After the user completes the application for registration, he only obtains the right to use the account, and the right to use belongs only to the initial applicant. At the same time, the initial application registrant may not give, borrow, lease, transfer or sell the account or otherwise permit the non-initial application registrant to use the account.
+4.1.3 If there is any third direction to give instructions, the user agrees and the person has the right to obtain the full authorization of the user according to the act, and the result of the act is confirmed. Directly attributable to the user itself.
+4.1.4 The user assumes responsibility for the account and password. The user is responsible for all activities and events that occur on or through his account (including but not limited to any content posted by the user and any resulting results). Full legal responsibility. Users must pay attention to the protection of account and password. If the account and password are illegally used by others because of the user&#39;s own reasons, I will not bear any responsibility. The user&#39;s own reasons include but are not limited to: disclose the account number and password and all registration materials to any third party; multiple people share the same account; install illegal or unclear programs.
+4.2 User Usage Rules
+4.2.1 Users must follow the following principles when using this software:
+1) Comply with relevant Chinese laws and regulations;
+2) Do not use this service system for any illegal purposes;
+3) Comply with all network protocols, regulations and procedures related to the Service;
+4) Do not use the Software System for any actions that may adversely affect the normal operation of the Internet;
+5) Do not use the Software Service System for any Not conducive to the behavior of other users;
+6) If any illegal use of the user account or account is found to be a security breach, it should be immediately notified to the official of the company; \
+7) Do not use plug-ins or other cheating, improper or unfair Means to participate in the service provided by this software.
+4.2.2 Dongda Zhengbao is committed to providing users with civilized, healthy and standardized services. Users should abide by the relevant laws and regulations of the People&#39;s Republic of China. (If the users are users outside the People&#39;s Republic of China, they should also abide by the country or region. The laws and regulations), the user will be responsible for the content of the information published by the user. In particular, users must not post the following:
+1) against the basic principles established by the Constitution of the People&#39;s Republic of China;
+2) endangering national unity, sovereignty and territorial integrity;
+3) divulging state secrets, endangering national security or damage National honours and interests;
+4) Inciting national hatred, ethnic discrimination, undermining national unity or infringing on national customs and habits;
+5) Destroying national religious policies, proclaiming cults and superstitions;
+6) Spreading rumors and disrupting social order Destroying social stability;
+7) spreading obscenity, gambling, violence, or abetting crimes;
+8) insulting or slandering others, infringing the legitimate rights and interests of others;
+9) endangering social morality or national fine cultural traditions;
+10) Promote the contents of plug-ins, private services and Trojans;
+11) Publish any homepage address or link that is reasonably judged to be improper or not approved by the user;
+12) Contains the laws of the People&#39;s Republic of China, Other content prohibited by administrative regulations.</li>
+<li>Intellectual Property
+5.1 I am the intellectual property right holder of this software. All intellectual property rights, trademarks, patents, trade secrets and other intellectual property rights of the software, as well as all information related to the software (including but not limited to video courseware, text, pictures, audio, graphics, interface design, layout framework, related Data or electronic documents, etc. are protected by the laws and regulations of the People&#39;s Republic of China and the corresponding international treaties. I am entitled to the above intellectual property rights. Unless I have been legally authorized by myself, no one may use them in any form without authorization. Otherwise, I can immediately terminate the application. The user provides products and services, and is legally held accountable for all losses.
+5.2 Users may use the content only after obtaining authorization from themselves or other relevant rights holders, and may not copy, reproduce, or create derivative products related to the content.
+5.3 When a user&#39;s original work is uploaded, transmitted, imported or otherwise provided to the software mobile application, it is deemed that the user grants the software mobile application the right to use its work. The authorization has no geographical, time limit or mode restrictions. Authorized as a free license, the software mobile application can be used within the scope of the current law, including but not limited to copying, distribution, rental, exhibition, performance, screening, broadcasting, information network communication, filming, adaptation, translation, compilation Etc., and may transfer the foregoing rights to other third parties.
+5.4 The information posted by the user on the software may not infringe the intellectual property rights of any third party. Users may not upload, post, modify, transmit or copy any copyright protection in any way without the prior written consent of the relevant rights holder. Material, trademark or proprietary information belonging to others.</li>
+<li>Privacy Protection
+6.1 Protecting user privacy is a basic policy of the software. I guarantee that the user&#39;s application materials will not be disclosed or provided to third parties without the user&#39;s consent and that the user will store the software in the software when using the service. Personal information, except in the following cases:
+1) Obtain prior authorization from the user;
+2) According to relevant laws and regulations;
+3) In accordance with the requirements of relevant government authorities;
+4) To protect the interests of the public ;
+5) To protect the legitimate rights and interests of this software mobile application.
+6.2 The software may cooperate with third parties to provide related services to users. In this case, if the third party agrees to assume the same responsibility as protecting the privacy of the user, I may personally information the user. Provided to the third party.
+6.3 Without prejudging the privacy information of individual users, I have the right to analyze the entire user database and make commercial use of the user database (including but not limited to publishing, analyzing or otherwise using user access, access User data information such as time period, user preferences, etc.).</li>
+<li>Disclaimer
+7.1 The products and services of this software for mobile phone use are subject to the following limited warranty, which supersedes any other express or implied warranties in any document, packaging, or other materials. (If there is). I provide the relevant products, software or programs and any support services only in the current situation and in the form of all errors, and only guarantee:
+1) The products and services provided by the software mobile phone application can basically conform to the official application of the software mobile phone. Announced requirements;
+2) The related products and services provided by the software mobile phone application are basically consistent with the service promises officially announced by the software mobile phone application;
+3) The software mobile phone application only tries to solve within the reasonable range allowed by the business. This software mobile phone application is any problem encountered in the process of providing products and services.
+7.2 To the fullest extent permitted by applicable law, I expressly disclaim all other warranties, express or implied, including but not limited to the merchantability, suitability, reliability, and accuracy of the Software. Sexual, complete, non-viral, and error-free, express or implied warranties and responsibilities.
+7.3 To the fullest extent permitted by applicable law, I do not warrant that the products and services offered by the Software will meet the requirements of the user, nor that the products and services offered will not be interrupted, and that the products and services will be Timeliness, security, errors, and whether the information can be accurate, timely, and smooth delivery are not guaranteed.
+7.4 To the fullest extent permitted by applicable law, I will not be liable for any accidental, indirect or special circumstances relating to the products and services of the Software, or in any way related to the products and services of the Software. , or indirect damages or requests (including but not limited to personal injury, leakage of privacy, failure to perform any liability including integrity or reasonable care, negligence and any other monetary or other loss) The damage caused) bears any responsibility.
+7.5 I reserve the right to use the form including but not limited to the consolidation server to achieve optimal utilization of server resources, and is not responsible for the loss of user benefits that may result from this.
+7.6 The opinions, suggestions and other contents expressed by the user on the mobile phone application of the software are the opinions of the user, and do not represent the opinions of the person and the official software. If the user is responsible for all the responsibilities caused by the user&#39;s illegality or violation of the use of this agreement, the user is solely responsible for the loss of the person, and the person has the right to request compensation from the user and has the right to immediately stop providing services to him.
+7.7 Users use this software to communicate with advertisers or conduct business or participate in promotional activities. It is entirely between the user and the advertiser. It has nothing to do with the person, if any damage is caused by the commercial behavior. Or loss, I am not responsible for it.</li>
+<li>Service change, interruption or termination
+8.1Software update
+8.1.1 In order to improve the user experience and improve the service content, I will continue to work hard to develop new services and provide software updates for you from time to time (these updates may take Software replacement, modification, function enhancement, version upgrade, etc.).
+8.1.2 In order to ensure the security and consistency of the software and services, I have the right to update the software without special notice to you, or to change or limit some of the software&#39;s functional effects. Older versions of the software may not be available after the new version of the software is released. I do not guarantee that the old version of the software will continue to be available and the corresponding customer service, please check and download the latest version at any time.
+8.2 In order to operate the software normally, the software mobile phone application needs to stop and maintain the software regularly or irregularly. Therefore, the normal service interruption and stop caused by the situation should be understood by the user. I should try my best to avoid service interruption. Stop or limit the interruption and stop time to the shortest time.
+8.3 Service interruption or termination
+8.3.1 In the event of any of the following circumstances, I reserve the right to discontinue or terminate the provision of the Service under this Agreement to the User at any time without notice to the User, inconvenience or damage I am not responsible for the user or the third party:
+1) Regular inspection or construction, updating of hardware and software, etc., I have the right to suspend the service, but we will complete the maintenance and update work as soon as possible;
+2) The server is damaged, unable to Normal operation;
+3) sudden failure of hardware and software equipment and electronic communication equipment;
+4) network provider line or other failure;
+5) in case of emergency to maintain national security or other users and third parties Personal safety;
+6) Force majeure and other third-party causes such as earthquakes, interruptions or loss.
+8.3.2 In addition to the circumstances mentioned in the preceding paragraph, the user agrees that the user has passed the website announcement one month in advance (if the relevant laws have special provisions and the advance notice time prescribed by law exceeds the above period, subject to legal provisions) The way in which the notice interrupts or terminates part or all of the service, the user has a clear knowledge of the grant of the above rights and knows that the direct or indirect loss of interest may be caused to himself or other third parties due to the exercise of the above rights. Investigate me for all liability that may result from the exercise of the above-mentioned unilateral interruption or termination of service rights.</li>
+</ol>
+
+
+
+
+</body>
+
+</html>
